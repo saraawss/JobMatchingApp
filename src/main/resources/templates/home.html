@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="myapp" ng-controller="myappcontroller">
+<head>
+<meta charset="ISO-8859-1"/>
+<title>Job Matching System</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+	
+    
+</head>
+<body>
+
+	<div class="container">
+	<h2 class="mt-5 mb-3">Job Matching System</h2>
+	
+	<div class="card border-secondary mt-5 mb-3">
+		<div class="card-body text-secondary">
+			<div>
+				<select  ng-model="workerSelected" ng-change="selectWorker(workerSelected)" data-ng-options="workerList as workerList.fullName for workerList in workerLists" class="form-control">
+					<option value="">Select Worker</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	
+	<div class="card border-secondary mt-3 mb-3" ng-if="tableView">
+		<div class="card-body text-secondary">
+			                                                           
+		    	<table class="table table-striped">
+					 <thead>
+						<tr>
+		                	<th scope="col"> Id </th>
+		                	<th scope="col"> Job Title </th>
+							<th scope="col"> Company </th>
+							<th scope="col"> About </th>
+																        
+		              </tr>
+					</thead>
+					<tbody>
+							<tr ng-repeat="y in reportData">
+								<td>&nbsp;{{y.jobId}}&nbsp;</td>
+								<td>&nbsp;{{y.jobTitle}}&nbsp;</td>
+								<td>&nbsp;{{y.company}}&nbsp;</td>
+								<td>&nbsp;{{y.about}}&nbsp;</td>
+							</tr>
+				   </tbody>
+				</table>
+		   
+	   </div>
+   </div>
+   
+   </div>
+   
+   
+   
+    <script src="/webjars/angularjs/1.4.9/angular.js"></script>
+	<script src="/webjars/angularjs/1.4.9/angular-resource.js"></script>
+	<script src="/webjars/angularjs/1.4.9/angular-route.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/controller.js"></script>
+    
+</body>
+</html>

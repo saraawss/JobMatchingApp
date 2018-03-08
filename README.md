@@ -1,5 +1,5 @@
 # Job Matching System
-Basic matching system to find matching jobs to appropriate worker.
+Basic matching system to find out matching jobs to appropriate worker.
 
 I used Java8, Spring boot, Angular, html, bootsrap to implement this project.
 
